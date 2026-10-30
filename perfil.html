@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - StudyHUB</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="btn-volver" title="Volver al inicio">
+                <span class="arrow">←</span> Volver al inicio
+            </a>
+        </div>
+        <div class="nav-right">
+            <a href="#" id="btn-cerrar-sesion" class="btn-logout">Cerrar sesión</a>
+        </div>
+    </header>  
+
+    <main class="profile-container">
+        <div class="profile-banner" id="profile-banner-bg"></div>
+
+        <div class="profile-header">
+            <div class="avatar-container">
+                <img id="perfil-avatar" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='%239ca3af' viewBox='0 0 24 24'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" alt="Foto de perfil">
+                <button type="button" id="btn-editar-foto" class="avatar-edit-btn" title="Cambiar foto de perfil">✏️</button>
+            </div>
+
+            <div class="profile-titles">
+                <h2 id="perfil-nombre">Cargando nombre...</h2>
+                <span class="badge" id="perfil-rol">Tutor / Estudiante</span>
+                <p id="perfil-bio-preview" class="bio-preview">Sin descripción aún.</p>
+            </div>
+        </div>
+
+        <div class="profile-body">
+            <div class="info-card">
+                <h3>Información Personal</h3>
+                <div class="info-grid">
+                    <p><strong>Correo:</strong> <span id="perfil-email">Cargando...</span></p>
+                    <p><strong>Teléfono:</strong> <span id="perfil-telefono">No registrado</span></p>
+                    <p><strong>Carrera:</strong> <span id="perfil-carrera">Cargando...</span></p>
+                    <p><strong>Ciclo:</strong> <span id="perfil-ciclo">Cargando...</span></p>
+                </div>
+            </div>
+
+            <div class="edit-card">
+                <h3>Editar Perfil</h3>
+                <form id="form-editar-perfil">
+                    <div class="form-group">
+                        <label for="edit-name">Nombre completo</label>
+                        <input id="edit-name" type="text" placeholder="Tu nombre completo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-phone">Número de teléfono</label>
+                        <input id="edit-phone" type="tel" placeholder="+51 987654321" pattern="^\+51\s?9\d{8}$" title="Debe incluir el código +51 seguido de 9 dígitos" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-bio">Sobre mí (Breve descripción)</label>
+                        <textarea id="edit-bio" placeholder="Cuéntanos un poco sobre ti..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-avatar-file">Foto de perfil (Subir archivo)</label>
+                        <input id="edit-avatar-file" type="file" accept="image/*">
+                    </div>
+
+                    <button type="submit" class="btn-auth-submit" style="width: 100%; margin-top: 5px;">Guardar Cambios</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ZONA DE TUTORÍAS SUBIDAS -->
+        <div style="padding: 0 35px 40px 35px;">
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 25px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <div>
+                        <h3 style="margin: 0; color: #1e293b; font-size: 20px;">📚 Mis Tutorías Publicadas</h3>
+                        <p style="margin: 4px 0 0 0; color: #64748b; font-size: 14px;">Gestiona las clases que ofreces a la comunidad.</p>
+                    </div>
+                    <button type="button" id="btn-abrir-modal-tutoria" style="background: #2563eb; color: white; border: none; padding: 12px 22px; border-radius: 10px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(37,99,235,0.3); transition: background 0.2s;">+ Publicar Tutoría</button>
+                </div>
+                <div id="contenedor-mis-tutorias" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+                    <p style="color: #64748b;">Aún no has publicado ninguna tutoría.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- VENTANA FLOTANTE (MODAL VERTICAL DE DISEÑO MODERNO) -->
+    <div id="modal-tutoria" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(4px);">
+        <div style="background: white; padding: 35px; border-radius: 20px; width: 100%; max-width: 440px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); position: relative; box-sizing: border-box; animation: modalPop 0.3s ease;">
+            <button type="button" id="btn-cerrar-modal" style="position: absolute; top: 20px; right: 20px; background: #f1f5f9; border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #64748b;">✕</button>
+            
+            <div style="margin-bottom: 20px;">
+                <span style="background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600;">Nueva Clase</span>
+                <h3 style="margin: 10px 0 5px 0; color: #1e293b; font-size: 22px;">Publica tu Tutoría</h3>
+                <p style="margin: 0; color: #64748b; font-size: 13px;">Comparte lo que dominas con otros compañeros.</p>
+            </div>
+            
+            <form id="form-subir-tutoria" style="display: flex; flex-direction: column; gap: 16px;">
+                <div>
+                    <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Curso o Materia</label>
+                    <input id="tutoria-curso" type="text" placeholder="Ej: Cálculo I o Programación Web" required style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 14px; box-sizing: border-box;">
+                </div>
+
+                <div style="display: flex; gap: 12px;">
+                    <div style="flex: 1;">
+                        <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Precio / hora (S/.)</label>
+                        <input id="tutoria-precio" type="number" placeholder="Ej: 20" required style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 14px; box-sizing: border-box;">
+                    </div>
+                    <div style="flex: 1;">
+                        <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Modalidad</label>
+                        <select id="tutoria-modalidad" required style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 14px; background: #fff; box-sizing: border-box;">
+                            <option value="">Seleccionar</option>
+                            <option value="Virtual">Virtual</option>
+                            <option value="Presencial">Presencial</option>
+                            <option value="Ambas">Ambas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Teléfono de Contacto (Auto)</label>
+                    <input id="tutoria-telefono" type="tel" readonly style="width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 14px; background-color: #f8fafc; color: #64748b; box-sizing: border-box; cursor: not-allowed;">
+                    <small style="color: #94a3b8; font-size: 11px;">Obtenido automáticamente de tu perfil.</small>
+                </div>
+
+                <div>
+                    <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Descripción de la clase</label>
+                    <textarea id="tutoria-descripcion" placeholder="¿Qué aprenderán en tus sesiones?" style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 14px; height: 80px; box-sizing: border-box; resize: none;"></textarea>
+                </div>
+
+                <button type="submit" style="background: #2563eb; color: white; border: none; padding: 14px; border-radius: 10px; font-weight: 600; font-size: 15px; cursor: pointer; margin-top: 5px; box-shadow: 0 4px 12px rgba(37,99,235,0.3);">Publicar Tutoría</button>
+            </form>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2026 StudyHUB. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

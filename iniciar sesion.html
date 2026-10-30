@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión - StudyHUB</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js" defer></script>
+    
+</head>
+<body>
+
+   
+    <header class="header">
+        <nav class="barra-azul">
+         
+            <div class="logo-barra">
+                <a href="index.html">
+                    <span class="logo-icon">S</span> StudyHUB
+                </a>
+            </div>
+
+           
+            <div class="enlaces-centro">
+                <a href="index.html">Inicio</a>
+                <a href="buscar tutores.html">Buscar tutores</a>
+                <a href="Como funciona.html">Cómo funciona</a>
+            </div>
+
+        
+            <div class="enlaces-derecha">
+                <a href="iniciar sesion.html" class="activo">Iniciar sesión</a>
+                <a href="registrarme.html" class="btn-registro">Registrarme</a>
+            </div>
+        </nav>
+    </header>
+
+    
+    <main class="login-hero-section">
+        <div class="card-auth">
+         
+            <div class="badge-auth">Qué bueno verte de nuevo</div>
+
+         
+            <h1 class="titulo-auth">Inicia sesión</h1>
+            <p class="descripcion-auth">
+                Entra a tu cuenta para continuar aprendiendo o acompañando a otros.
+            </p>
+
+            <form class="form-auth" data-auth-form="login">
+                <div class="form-group">
+                    <label for="login-email">Correo electrónico</label>
+                    <input type="email" id="login-email" placeholder="tu@universidad.edu" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">Contraseña</label>
+                    <input type="password" id="login-password" placeholder="Tu contraseña" required>
+                </div>
+
+                <button type="submit" class="btn-auth-submit">Iniciar sesión &rarr;</button>
+            </form>
+
+           
+            <div class="auth-footer-link">
+                ¿Aún no tienes cuenta? <a href="registrarme.html">Regístrate aquí</a>
+            </div>
+        </div>
+    </main>
+
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-copy">
+                Aprendemos mejor cuando lo hacemos juntos. © 2026 StudyHUB
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

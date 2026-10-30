@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarme - StudyHUB</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+
+    
+    <header class="header">
+        <nav class="barra-azul">
+           
+            <div class="logo-barra">
+                <a href="index.html">
+                    <span class="logo-icon">S</span> StudyHUB
+                    <img src="imagen/logoUCV.png" alt="Logo UCV" class="logo-universidad">
+                </a>
+            </div>
+
+          
+            <div class="enlaces-centro">
+                <a href="index.html">Inicio</a>
+                <a href="buscar tutores.html">Buscar tutores</a>
+                <a href="Como funciona.html">Cómo funciona</a>
+            </div>
+
+            <div class="enlaces-derecha">
+                <a href="iniciar sesion.html">Iniciar sesión</a>
+                <a href="registrarme.html" class="btn-registro activo">Registrarme</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="login-hero-section">
+        <div class="card-auth card-registro">
+   
+            <div class="badge-auth">Tu comunidad te espera</div>
+
+            <h1 class="titulo-auth">Crea tu cuenta</h1>
+            <p class="descripcion-auth">
+                Cuéntanos un poco sobre ti. Podrás encontrar apoyo o postular como tutor.
+            </p>
+
+   
+            <form data-auth-form="signup">
+                <div class="form-group">
+                    <label for="name">Nombre completo</label>
+                    <input id="name" name="full_name" type="text" placeholder="¿Cómo te llamas?" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input id="email" name="email" type="email" placeholder="tu@universidad.edu" required>
+                </div>
+
+                <div class="form-row-2col">
+                    <div class="form-group">
+                        <label for="career">Carrera</label>
+                        <input id="career" name="career" type="text" placeholder="Tu carrera" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cycle">Ciclo actual</label>
+                        <select id="cycle" name="cycle" class="select-auth" required>
+                            <option value="">Elige tu ciclo</option>
+                            <option>1.º ciclo</option>
+                            <option>2.º ciclo</option>
+                            <option>3.º ciclo</option>
+                            <option>4.º ciclo</option>
+                            <option>5.º ciclo</option>
+                            <option>6.º ciclo</option>
+                            <option>7.º ciclo</option>
+                            <option>8.º ciclo</option>
+                            <option>9.º ciclo</option>
+                            <option>10.º ciclo</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Crea una contraseña</label>
+                    <input id="password" name="password" type="password" placeholder="Al menos 6 caracteres" minlength="6" required>
+                </div>
+
+                <button class="btn-auth-submit" type="submit">Crear mi cuenta →</button>
+
+                <p class="auth-footer-link">
+                    Al continuar, aceptas las condiciones de uso de StudyHUB.<br>
+                    ¿Ya tienes cuenta? <a href="iniciar sesion.html">Inicia sesión</a>
+                </p>
+            </form>
+        </div>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-copy">
+                Aprendemos mejor cuando lo hacemos juntos. © 2026 StudyHUB
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

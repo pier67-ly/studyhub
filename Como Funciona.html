@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo funciona - StudyHUB</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js" defer></script>
+    
+</head>
+<body>
+
+  
+    <header class="header">
+        <nav class="barra-azul">
+         
+            <div class="logo-barra">
+                <a href="inicio.html">
+                    <span class="logo-icon">S</span> StudyHUB
+                 
+                </a>
+            </div>
+
+            <div class="enlaces-centro">
+                <a href="inicio.html">Inicio</a>
+                <a href="buscar tutores.html">Buscar tutores</a>
+                <a href="Como funciona.html" class="activo">Cómo funciona</a>
+            </div>
+
+            <div class="enlaces-derecha">
+                <a href="iniciar sesion.html">Iniciar sesión</a>
+                <a href="registrarme.html" class="btn-registro">Registrarme</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="como-funciona-hero">
+        <div class="como-funciona-container">
+   
+            <div class="badge-secundario">Guía de la plataforma</div>
+            <h1 class="titulo-seccion-grande">¿Cómo funciona StudyHUB?</h1>
+            <p class="descripcion-busqueda">
+                Una comunidad diseñada por estudiantes y para estudiantes. Elige qué deseas hacer hoy.
+            </p>
+
+            <div class="tabs-selector">
+                <button class="tab-btn activo" onclick="mostrarSeccion('estudiante')">Busco un tutor</button>
+                <button class="tab-btn" onclick="mostrarSeccion('tutor')">Quiero ser tutor</button>
+            </div>
+
+            <div id="seccion-estudiante" class="tab-content activo">
+                <div class="tarjetas-grid">
+                    <div class="card-paso">
+                        <div class="icon-box">🔍</div>
+                        <h3>1. Busca tu curso</h3>
+                        <p>Filtra por el curso exacto que te complica y revisa la modalidad disponible (virtual o presencial).</p>
+                    </div>
+                    <div class="card-paso">
+                        <div class="icon-box">⭐</div>
+                        <h3>2. Revisa perfiles</h3>
+                        <p>Conoce al tutor, su ciclo universitario, su especialidad y las opiniones de otros compañeros.</p>
+                    </div>
+                    <div class="card-paso">
+                        <div class="icon-box">🤝</div>
+                        <h3>3. Conecta y avanza</h3>
+                        <p>Coordina la sesión directamente mediante la plataforma y resuelve todas tus dudas paso a paso.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="seccion-tutor" class="tab-content">
+                <div class="tarjetas-grid">
+                    <div class="card-paso">
+                        <div class="icon-box">✉️</div>
+                        <h3>1. Regístrate con tu correo</h3>
+                        <p>Crea tu perfil de tutor utilizando exclusivamente tu correo institucional universitario.</p>
+                    </div>
+                    <div class="card-paso">
+                        <div class="icon-box">📚</div>
+                        <h3>2. Publica tus cursos</h3>
+                        <p>Selecciona qué materias ya superaste con éxito y en cuáles te sientes listo para ayudar.</p>
+                    </div>
+                    <div class="card-paso">
+                        <div class="icon-box">🚀</div>
+                        <h3>3. Acompaña a otros</h3>
+                        <p>Ayuda a estudiantes de ciclos inferiores a entender los temas y comparte tu experiencia.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-copy">
+                Aprendemos mejor cuando lo hacemos juntos. © 2026 StudyHUB
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function mostrarSeccion(rol) {
+         
+            const tabEstudiante = document.getElementById('seccion-estudiante');
+            const tabTutor = document.getElementById('seccion-tutor');
+            const botones = document.querySelectorAll('.tab-btn');
+
+      
+            botones.forEach(btn => btn.classList.remove('activo'));
+            event.target.classList.add('activo');
+
+            if (rol === 'estudiante') {
+                tabEstudiante.classList.add('activo');
+                tabTutor.classList.remove('activo');
+            } else {
+                tabTutor.classList.add('activo');
+                tabEstudiante.classList.remove('activo');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHUB</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+
+   
+    <header class="header">
+        <nav class="barra-azul">
+            
+            <div class="logo-barra">
+                <a href="index.html">
+                    <span class="logo-icon">S</span> StudyHUB
+                    
+                </a>
+            </div>
+
+           
+            <div class="enlaces-centro">
+                <a href="index.html" class="activo">Inicio</a>
+                <a href="buscar tutores.html">Buscar tutores</a>
+                <a href="Como funciona.html">Cómo funciona</a>
+            </div>
+
+            
+            <div class="enlaces-derecha">
+                <a href="iniciar sesion.html">Iniciar sesión</a>
+                <a href="registrarme.html" class="btn-registro">Registrarme</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="hero-section">
+       
+        <div class="hero-content">
+            <div class="badge-comunidad">
+                <span class="punto-verde"></span> Aprender en comunidad, crecer juntos
+            </div>
+
+            <h1 class="titulo-principal">
+                Tu siguiente ciclo <br>empieza con <span class="texto-azul">StudyHUB.</span>
+            </h1>
+
+            <p class="subtitulo">
+                Encuentra a ese estudiante que ya pasó por el curso y puede ayudarte a entenderlo. O comparte lo que sabes y acompaña a alguien más.
+            </p>
+
+            <div class="botones-accion">
+                <a href="buscar tutores.html" class="btn-primary">Encuentra un tutor &rarr;</a>
+                <a href="registrarme.html" class="btn-secondary">Quiero enseñar</a>
+            </div>
+
+            <div class="comunidad-footer">
+                <div class="avatares">
+                    <span class="avatar">👨‍🎓</span>
+                    <span class="avatar">👩‍🎓</span>
+                    <span class="avatar">👨🏽‍💻</span>
+                    <span class="avatar">👩‍💻</span>
+                </div>
+                <span class="texto-comunidad">Una comunidad hecha por estudiantes, para estudiantes</span>
+            </div>
+        </div>
+
+        
+        <div class="hero-visual">
+            <div class="burbuja-flotante top-right">
+                <span class="punto-verde-sm"></span> + Una duda menos, un paso más
+            </div>
+            
+            <div class="card-tutor">
+                <span class="tutor-label">Tutor recomendado</span>
+                
+                <div class="tutor-info">
+                    <div class="tutor-avatar-box">👨‍🎓</div>
+                    <div class="tutor-details">
+                        <h3>Diego Ramírez</h3>
+                        <p>7.° ciclo • Ingeniería</p>
+                    </div>
+                    <div class="tutor-rating">⭐ 4.9</div>
+                </div>
+
+                <div class="tutor-courses-label">Te puede ayudar con</div>
+                <div class="tutor-badges">
+                    <span class="badge-curso">Cálculo II</span>
+                    <span class="badge-curso">Álgebra</span>
+                    <span class="badge-curso">Física</span>
+                </div>
+
+                <div class="tutor-footer">
+                    <span class="ver-perfil">Ver perfil &rarr;</span>
+                </div>
+
+                <a href="buscar tutores.html" class="btn-card-action">Explorar tutores &rarr;</a>
+            </div>
+
+            <div class="burbuja-flotante bottom-left">
+                📚 A tu ritmo y con alguien que te entiende
+            </div>
+        </div>
+    </main>
+
+    
+    <section class="como-funciona-section">
+        <div class="container-centro">
+            <div class="badge-secundario">Así funciona StudyHUB</div>
+            <h2 class="titulo-seccion">Aprender se siente mejor<br>acompañado</h2>
+            <p class="descripcion-seccion">
+                Conecta con estudiantes que conocen tus cursos porque ya los llevaron. Comparte, pregunta y avanza.
+            </p>
+        </div>
+
+        
+        <div class="tarjetas-grid">
+            <div class="card-paso">
+                <div class="icon-box">🔍</div>
+                <h3>Encuentra tu tutor</h3>
+                <p>Busca por curso y elige a alguien de un ciclo avanzado que se ajuste a lo que necesitas.</p>
+            </div>
+
+            <div class="card-paso">
+                <div class="icon-box">🤝</div>
+                <h3>Conecta y coordina</h3>
+                <p>Revisa el perfil del tutor y acuerden una sesión en línea o presencial.</p>
+            </div>
+
+            <div class="card-paso">
+                <div class="icon-box">🌱</div>
+                <h3>Crece a tu manera</h3>
+                <p>Resuelve tus dudas con confianza y gana herramientas para tus siguientes cursos.</p>
+            </div>
+        </div>
+
+       
+        <div class="banner-cta-oscuro">
+            <div class="banner-texto">
+                <h2>¿Ya superaste ese curso?</h2>
+                <p>Lo que aprendiste puede ser justo lo que otro estudiante necesita.</p>
+            </div>
+            <a href="registrarme.html" class="btn-banner">Conviértete en tutor &rarr;</a>
+        </div>
+    </section>
+
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+           
+            <div class="footer-copy">
+                Aprendemos mejor cuando lo hacemos juntos. © 2026 StudyHUB
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

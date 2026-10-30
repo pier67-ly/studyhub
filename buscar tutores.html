@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar tutores - StudyHUB</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="barra-azul">
+            <div class="logo-barra">
+                <a href="index.html">
+                    <span class="logo-icon">S</span> StudyHUB
+                </a>
+            </div>
+
+            <div class="enlaces-centro">
+                <a href="index.html">Inicio</a>
+                <a href="buscar tutores.html" class="activo">Buscar tutores</a>
+                <a href="Como funciona.html">Cómo funciona</a>
+            </div>
+
+            <div class="enlaces-derecha">
+                <a href="iniciar sesion.html">Iniciar sesión</a>
+                <a href="registrarme.html" class="btn-registro">Registrarme</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="buscar-hero-section">
+        <div class="buscar-container">
+            <div class="badge-secundario">Aprende de alguien que ya estuvo ahí</div>
+
+            <h1 class="titulo-seccion-grande">Encuentra a tu tutor</h1>
+            <p class="descripcion-busqueda">
+                Busca por curso y modalidad. Cada tutor es un estudiante que quiere compartir lo que sabe.
+            </p>
+
+            <div class="search-bar-box">
+                <div class="search-input-group">
+                    <input type="text" placeholder="¿Qué curso necesitas reforzar?" class="input-curso">
+                </div>
+                <div class="search-select-group">
+                    <select class="select-modalidad">
+                        <option value="">Cualquier modalidad</option>
+                        <option value="virtual">Virtual</option>
+                        <option value="presencial">Presencial</option>
+                        <option value="ambas">Ambas</option>
+                    </select>
+                </div>
+                <button type="button" class="btn-buscar-accion">Buscar tutores</button>
+            </div>
+        </div>
+    </main>
+
+    
+    <section class="resultados-tutores-section" style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+        <div id="contenedor-tarjetas-tutores" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+         
+        </div>
+    </section>
+  
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-copy">
+                Aprendemos mejor cuando lo hacemos juntos. © 2026 StudyHUB
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
